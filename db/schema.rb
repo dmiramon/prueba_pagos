@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113032331) do
+ActiveRecord::Schema.define(version: 20160113230625) do
 
   create_table "currencies", force: :cascade do |t|
     t.string   "code"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 20160113032331) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "preregistrations", force: :cascade do |t|
+    t.integer  "proposal_id"
+    t.string   "student_name"
+    t.string   "student_email"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "proposals", force: :cascade do |t|

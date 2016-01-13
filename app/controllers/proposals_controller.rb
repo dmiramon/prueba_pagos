@@ -77,6 +77,16 @@ class ProposalsController < ApplicationController
     @proposal = prop.pay_with_stripe params[:stripe_token], Proposal.new(proposal_params)
   end
 
+  def add_students
+    @proposal = Proposal.find(params[:id])
+    pres = params[:students]
+    pres.each do |student|
+      st = Preregistration.new(student_name: student["student_name"], student_email: student["student_email"])
+      @proposal.preregistrations << st
+    end
+    render :show
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_proposal
@@ -86,6 +96,7 @@ class ProposalsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def proposal_params
       params.require(:proposal).permit(:user_id, :plan, :currency, :unit_price, :total_price, :proposal_code, :num_subscriptions, :num_months, :client_name, :client_email, :company_name, :company_details, :expiration_date, :notes, :is_paid, :payment_id)
+      
     end
 
     def set_default_reponse

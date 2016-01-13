@@ -1,7 +1,7 @@
 class Proposal < ActiveRecord::Base
 	belongs_to :full_plan, class_name: "Plan", foreign_key: :plan 
 	belongs_to :full_currency, class_name: "Currency", foreign_key: :currency
-
+	has_many :preregistrations
 
 	def pay_with_stripe stripe_token, proposal
 		setup_stripe

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :proposals do
     member do
       post 'pay_with_stripe'
+      post 'add_students'
     end
     collection do
       get 'search'
