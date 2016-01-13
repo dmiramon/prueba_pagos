@@ -6,3 +6,9 @@ else
 end
 
 json.currency_name @proposal.full_currency.code 
+
+json.set! :students do
+	json.array!(@proposal.preregistrations) do |proposal|
+		json.extract! proposal, :student_name, :student_email
+	end	
+end
