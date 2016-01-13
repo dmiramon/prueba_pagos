@@ -3,4 +3,6 @@ if @proposal.expiration_date?
 	json.expiration_date @proposal.expiration_date 
 else
 	json.expiration_date ''
-end 
+end
+
+json.currency_name @proposal.full_currency.code 

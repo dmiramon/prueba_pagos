@@ -5,7 +5,7 @@ class ProposalsController < ApplicationController
   # GET /proposals
   # GET /proposals.json
   def index
-    @proposals = Proposal.all
+    @proposals = Proposal.all.includes(:full_currency)
   end
 
   # GET /proposals/1
@@ -60,6 +60,11 @@ class ProposalsController < ApplicationController
       format.html { redirect_to proposals_url, notice: 'Proposal was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    @proposals = Proposal.search(params[:query])
+    render :index
   end
 
   def by_code

@@ -25,6 +25,9 @@ class Proposal < ActiveRecord::Base
 		self
 	end
 
+	def self.search query
+		proposals = Proposal.where('client_email LIKE ? OR client_name LIKE ?', "%#{query}%", "%#{query}%").includes(:full_currency)
+	end
 
 	private
 
