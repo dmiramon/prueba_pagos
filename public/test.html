@@ -1,0 +1,26 @@
+<html>
+	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+	<body>
+		<script type="text/javascript">
+			Stripe.setPublishableKey('pk_test_ety11DNFglOY1fS12UTPVqQk');
+			Stripe.card.createToken({
+  number: "4242424242424242",
+  cvc: "123",
+  exp_month: "12",
+  exp_year: "2018"
+}, stripeResponseHandler);	
+
+		function stripeResponseHandler(status, response) {
+  
+  if (response.error) {
+   console.log("chale")
+  } else {
+    // response contains id and card, which contains additional card details
+    var token = response.id;
+    // Insert the token into the form so it gets submitted to the server
+    console.log(token);
+  }
+}
+		</script>	
+	</body>
+</html>

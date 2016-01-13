@@ -1,0 +1,1 @@
+json.extract! @proposal, :id, :user_id, :plan, :currency, :unit_price, :total_price, :proposal_code, :num_subscriptions, :num_months, :client_name, :client_email, :company_name, :company_details, :expiration_date, :notes, :is_paid, :payment_id

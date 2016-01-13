@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Proposals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Plan</th>
+      <th>Currency</th>
+      <th>Unit price</th>
+      <th>Total price</th>
+      <th>Proposal code</th>
+      <th>Num subscriptions</th>
+      <th>Num months</th>
+      <th>Client name</th>
+      <th>Client email</th>
+      <th>Company name</th>
+      <th>Company details</th>
+      <th>Expiration date</th>
+      <th>Notes</th>
+      <th>Is paid</th>
+      <th>Payment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proposals.each do |proposal| %>
+      <tr>
+        <td><%= proposal.user_id %></td>
+        <td><%= proposal.plan %></td>
+        <td><%= proposal.currency %></td>
+        <td><%= proposal.unit_price %></td>
+        <td><%= proposal.total_price %></td>
+        <td><%= proposal.proposal_code %></td>
+        <td><%= proposal.num_subscriptions %></td>
+        <td><%= proposal.num_months %></td>
+        <td><%= proposal.client_name %></td>
+        <td><%= proposal.client_email %></td>
+        <td><%= proposal.company_name %></td>
+        <td><%= proposal.company_details %></td>
+        <td><%= proposal.expiration_date %></td>
+        <td><%= proposal.notes %></td>
+        <td><%= proposal.is_paid %></td>
+        <td><%= proposal.payment_id %></td>
+        <td><%= link_to 'Show', proposal %></td>
+        <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
+        <td><%= link_to 'Destroy', proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Proposal', new_proposal_path %>

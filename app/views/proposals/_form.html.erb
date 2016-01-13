@@ -1,0 +1,81 @@
+<%= form_for(@proposal) do |f| %>
+  <% if @proposal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@proposal.errors.count, "error") %> prohibited this proposal from being saved:</h2>
+
+      <ul>
+      <% @proposal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :plan %><br>
+    <%= f.number_field :plan %>
+  </div>
+  <div class="field">
+    <%= f.label :currency %><br>
+    <%= f.number_field :currency %>
+  </div>
+  <div class="field">
+    <%= f.label :unit_price %><br>
+    <%= f.text_field :unit_price %>
+  </div>
+  <div class="field">
+    <%= f.label :total_price %><br>
+    <%= f.text_field :total_price %>
+  </div>
+  <div class="field">
+    <%= f.label :proposal_code %><br>
+    <%= f.text_field :proposal_code %>
+  </div>
+  <div class="field">
+    <%= f.label :num_subscriptions %><br>
+    <%= f.number_field :num_subscriptions %>
+  </div>
+  <div class="field">
+    <%= f.label :num_months %><br>
+    <%= f.number_field :num_months %>
+  </div>
+  <div class="field">
+    <%= f.label :client_name %><br>
+    <%= f.text_field :client_name %>
+  </div>
+  <div class="field">
+    <%= f.label :client_email %><br>
+    <%= f.text_field :client_email %>
+  </div>
+  <div class="field">
+    <%= f.label :company_name %><br>
+    <%= f.text_field :company_name %>
+  </div>
+  <div class="field">
+    <%= f.label :company_details %><br>
+    <%= f.text_area :company_details %>
+  </div>
+  <div class="field">
+    <%= f.label :expiration_date %><br>
+    <%= f.date_select :expiration_date %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :is_paid %><br>
+    <%= f.check_box :is_paid %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_id %><br>
+    <%= f.number_field :payment_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

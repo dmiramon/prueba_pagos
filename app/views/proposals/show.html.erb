@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @proposal.user_id %>
+</p>
+
+<p>
+  <strong>Plan:</strong>
+  <%= @proposal.plan %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @proposal.currency %>
+</p>
+
+<p>
+  <strong>Unit price:</strong>
+  <%= @proposal.unit_price %>
+</p>
+
+<p>
+  <strong>Total price:</strong>
+  <%= @proposal.total_price %>
+</p>
+
+<p>
+  <strong>Proposal code:</strong>
+  <%= @proposal.proposal_code %>
+</p>
+
+<p>
+  <strong>Num subscriptions:</strong>
+  <%= @proposal.num_subscriptions %>
+</p>
+
+<p>
+  <strong>Num months:</strong>
+  <%= @proposal.num_months %>
+</p>
+
+<p>
+  <strong>Client name:</strong>
+  <%= @proposal.client_name %>
+</p>
+
+<p>
+  <strong>Client email:</strong>
+  <%= @proposal.client_email %>
+</p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @proposal.company_name %>
+</p>
+
+<p>
+  <strong>Company details:</strong>
+  <%= @proposal.company_details %>
+</p>
+
+<p>
+  <strong>Expiration date:</strong>
+  <%= @proposal.expiration_date %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @proposal.notes %>
+</p>
+
+<p>
+  <strong>Is paid:</strong>
+  <%= @proposal.is_paid %>
+</p>
+
+<p>
+  <strong>Payment:</strong>
+  <%= @proposal.payment_id %>
+</p>
+
+<%= link_to 'Edit', edit_proposal_path(@proposal) %> |
+<%= link_to 'Back', proposals_path %>
